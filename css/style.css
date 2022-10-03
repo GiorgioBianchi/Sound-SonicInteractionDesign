@@ -1,0 +1,68 @@
+.image1 {
+    background-image: url("../assets/images/1_interieur_mit_der_uhr.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:fit-content;
+ }
+
+.image2 {
+    background-image: url("../assets/images/2_The_Lamb.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+ }
+
+.image3 {
+    background-image: url("../assets/images/3_Fish_Magic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+ }
+
+.image4 {
+    background-image: url("../assets/images/4_Castle Garden.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+ }
+
+.image5 {
+    background-image: url("../assets/images/5_Halme.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+ }
+ 
+ .timeline {
+    border-left: 6px solid white;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+.dot {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border-color: white;
+    border: 3px solid white;
+    background-color: #222222;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.year {
+    position:absolute;
+    color: white;
+    margin-left: 40px;
+    left: 50%;
+    text-shadow: 5px 5px 5px black;
+}

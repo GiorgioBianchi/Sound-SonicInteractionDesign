@@ -1,3 +1,6 @@
+body {
+    user-select: none;
+}
 .image1 {
     background-image: url("../assets/images/1_interieur_mit_der_uhr.jpg");
     background-size: cover;
@@ -48,7 +51,6 @@
 }
 
 .dot {
-    position: absolute;
     height: 30px;
     width: 30px;
     border-radius: 15px;
@@ -60,9 +62,7 @@
 }
 
 .year {
-    position:absolute;
     color: white;
-    margin-left: 40px;
     left: 50%;
     text-shadow: 5px 5px 5px black;
 }

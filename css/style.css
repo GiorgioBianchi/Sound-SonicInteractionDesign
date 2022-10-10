@@ -50,6 +50,17 @@ body {
     top: 0;
 }
 
+.timeline-info {
+    width: 25%; 
+    display: flex; 
+    left: 50%; 
+    flex-direction:column; 
+    position: absolute; 
+    height: 100vh; 
+    top:0; 
+    justify-content:space-between;
+}
+
 .dot {
     height: 30px;
     width: 30px;

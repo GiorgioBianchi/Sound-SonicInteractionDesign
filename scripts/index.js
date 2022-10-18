@@ -114,11 +114,9 @@ function startExperience() {
 
     context = new AudioContext();
         
-    
-
     context.resume().then(() => {
         console.log('PLAY')
-        sound_1Img.volume(0);
+        sound_1Img.volume(1);
         sound_1Img.play();
         sound_2Img.volume(0);
         sound_2Img.play();

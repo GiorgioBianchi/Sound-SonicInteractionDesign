@@ -85,17 +85,17 @@ var sound_2Img = new Howl({
 });
 
 var sound_3Img = new Howl({
-    src: ['./assets/sounds/tracks/1.mp3'],
+    src: ['./assets/sounds/tracks/3.mp3'],
     loop: true,
 });
 
 var sound_4Img = new Howl({
-    src: ['./assets/sounds/tracks/2.mp3'],
+    src: ['./assets/sounds/tracks/4.mp3'],
     loop: true,
 });
 
 var sound_5Img = new Howl({
-    src: ['./assets/sounds/tracks/1.mp3'],
+    src: ['./assets/sounds/tracks/5.mp3'],
     loop: true,
 });
     

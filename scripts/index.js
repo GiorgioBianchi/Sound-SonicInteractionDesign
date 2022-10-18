@@ -30,23 +30,25 @@ $( document ).ready(function() {
         console.log(scrollPercent);
 
         if(scrollPercent > IMAGE1_TOP && scrollPercent < IMAGE1_BOTTOM ){
-            console.log('audio playing');
             if(sound_2Img.playing()) sound_2Img.volume(0);
         } else if(scrollPercent > IMAGE1_BOTTOM && scrollPercent < IMAGE2_TOP) {
             setVolumes(scrollPercent, sound_1Img, sound_2Img);
         } else if( scrollPercent > IMAGE2_TOP && scrollPercent < IMAGE2_BOTTOM) {
             if(sound_1Img.playing()) sound_1Img.volume(0);
             sound_2Img.volume(1);
+            if(sound_3Img.playing()) sound_3Img.volume(0);
         } else if( scrollPercent > IMAGE2_BOTTOM && scrollPercent < IMAGE3_TOP) {
             setVolumes(scrollPercent, sound_2Img, sound_3Img);
         } else if( scrollPercent > IMAGE3_TOP && scrollPercent < IMAGE3_BOTTOM) {
             if(sound_2Img.playing()) sound_2Img.volume(0);
             sound_3Img.volume(1);
+            if(sound_4Img.playing()) sound_4Img.volume(0);
         } else if( scrollPercent > IMAGE3_BOTTOM && scrollPercent < IMAGE4_TOP) {
             setVolumes(scrollPercent, sound_3Img, sound_4Img);
         } else if( scrollPercent > IMAGE4_TOP && scrollPercent < IMAGE4_BOTTOM) {
             if(sound_3Img.playing()) sound_3Img.volume(0);
             sound_4Img.volume(1);
+            if(sound_5Img.playing()) sound_5Img.volume(0);
         } else if( scrollPercent > IMAGE4_BOTTOM && scrollPercent < IMAGE5_TOP) {
             setVolumes(scrollPercent, sound_4Img, sound_5Img);
         } else if( scrollPercent > IMAGE5_TOP && scrollPercent < IMAGE5_BOTTOM) {

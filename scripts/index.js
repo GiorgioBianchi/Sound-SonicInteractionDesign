@@ -38,19 +38,19 @@ $( document ).ready(function() {
             sound_2Img.volume(1);
             if(sound_3Img.playing()) sound_3Img.volume(0);
         } else if( scrollPercent > IMAGE2_BOTTOM && scrollPercent < IMAGE3_TOP) {
-            setVolumes(scrollPercent, sound_2Img, sound_3Img);
+            setVolumes(scrollPercent, sound_2Img, sound_3Img, IMAGE_2_3_DIFF);
         } else if( scrollPercent > IMAGE3_TOP && scrollPercent < IMAGE3_BOTTOM) {
             if(sound_2Img.playing()) sound_2Img.volume(0);
             sound_3Img.volume(1);
             if(sound_4Img.playing()) sound_4Img.volume(0);
         } else if( scrollPercent > IMAGE3_BOTTOM && scrollPercent < IMAGE4_TOP) {
-            setVolumes(scrollPercent, sound_3Img, sound_4Img);
+            setVolumes(scrollPercent, sound_3Img, sound_4Img, IMAGE_3_4_DIFF);
         } else if( scrollPercent > IMAGE4_TOP && scrollPercent < IMAGE4_BOTTOM) {
             if(sound_3Img.playing()) sound_3Img.volume(0);
             sound_4Img.volume(1);
             if(sound_5Img.playing()) sound_5Img.volume(0);
         } else if( scrollPercent > IMAGE4_BOTTOM && scrollPercent < IMAGE5_TOP) {
-            setVolumes(scrollPercent, sound_4Img, sound_5Img);
+            setVolumes(scrollPercent, sound_4Img, sound_5Img, IMAGE_4_5_DIFF);
         } else if( scrollPercent > IMAGE5_TOP && scrollPercent < IMAGE5_BOTTOM) {
             if(sound_4Img.playing()) sound_4Img.volume(0);
             sound_5Img.volume(1);
@@ -84,11 +84,11 @@ var sound_5Img = new Howl({
     loop: true,
 });
     
-function setVolumes(scrollPercent, sound_1, sound_2) {
+function setVolumes(scrollPercent, sound_1, sound_2, img_diff) {
     //proporzione fade
     var soundFade = scrollPercent - IMAGE1_BOTTOM;
     //sound : x = topFade : 100
-    var volume = (IMAGE_1_2_DIFF / 100) * soundFade;
+    var volume = (img_diff / 100) * soundFade;
     sound_2.volume(volume);
     sound_1.volume(1 - volume);
 }

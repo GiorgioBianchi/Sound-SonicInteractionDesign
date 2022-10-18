@@ -1,7 +1,7 @@
 
 let context;
 
-const IMAGE1_TOP = 7.5,
+const IMAGE1_TOP = 1,
 IMAGE1_BOTTOM = 17.2, 
 IMAGE2_TOP = 24.6, 
 IMAGE_1_2_DIFF = IMAGE2_TOP - IMAGE1_BOTTOM;

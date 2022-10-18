@@ -32,25 +32,40 @@ $( document ).ready(function() {
         if(scrollPercent > IMAGE1_TOP && scrollPercent < IMAGE1_BOTTOM ){
             if(sound_2Img.playing()) sound_2Img.volume(0);
         } else if(scrollPercent > IMAGE1_BOTTOM && scrollPercent < IMAGE2_TOP) {
-            setVolumes(scrollPercent, sound_1Img, sound_2Img);
+            var soundFade = scrollPercent - IMAGE1_BOTTOM;
+            var volume = (IMAGE_1_2_DIFF / 100) * soundFade;
+            sound_2Img.volume(volume);
+            sound_1Img.volume(1 - volume);
         } else if( scrollPercent > IMAGE2_TOP && scrollPercent < IMAGE2_BOTTOM) {
             if(sound_1Img.playing()) sound_1Img.volume(0);
             sound_2Img.volume(1);
             if(sound_3Img.playing()) sound_3Img.volume(0);
         } else if( scrollPercent > IMAGE2_BOTTOM && scrollPercent < IMAGE3_TOP) {
-            setVolumes(scrollPercent, sound_2Img, sound_3Img, IMAGE_2_3_DIFF);
+            //setVolumes(scrollPercent, sound_2Img, sound_3Img, IMAGE_2_3_DIFF);
+            var soundFade = scrollPercent - IMAGE2_BOTTOM;
+            var volume = (IMAGE_2_3_DIFF / 100) * soundFade;
+            sound_3Img.volume(volume);
+            sound_2Img.volume(1 - volume);
         } else if( scrollPercent > IMAGE3_TOP && scrollPercent < IMAGE3_BOTTOM) {
             if(sound_2Img.playing()) sound_2Img.volume(0);
             sound_3Img.volume(1);
             if(sound_4Img.playing()) sound_4Img.volume(0);
         } else if( scrollPercent > IMAGE3_BOTTOM && scrollPercent < IMAGE4_TOP) {
-            setVolumes(scrollPercent, sound_3Img, sound_4Img, IMAGE_3_4_DIFF);
+            //setVolumes(scrollPercent, sound_3Img, sound_4Img, IMAGE_3_4_DIFF);
+            var soundFade = scrollPercent - IMAGE3_BOTTOM;
+            var volume = (IMAGE_3_4_DIFF / 100) * soundFade;
+            sound_4Img.volume(volume);
+            sound_3Img.volume(1 - volume);
         } else if( scrollPercent > IMAGE4_TOP && scrollPercent < IMAGE4_BOTTOM) {
             if(sound_3Img.playing()) sound_3Img.volume(0);
             sound_4Img.volume(1);
             if(sound_5Img.playing()) sound_5Img.volume(0);
         } else if( scrollPercent > IMAGE4_BOTTOM && scrollPercent < IMAGE5_TOP) {
-            setVolumes(scrollPercent, sound_4Img, sound_5Img, IMAGE_4_5_DIFF);
+            //setVolumes(scrollPercent, sound_4Img, sound_5Img, IMAGE_4_5_DIFF);
+            var soundFade = scrollPercent - IMAGE4_BOTTOM;
+            var volume = (IMAGE_4_5_DIFF / 100) * soundFade;
+            sound_5Img.volume(volume);
+            sound_4Img.volume(1 - volume);
         } else if( scrollPercent > IMAGE5_TOP && scrollPercent < IMAGE5_BOTTOM) {
             if(sound_4Img.playing()) sound_4Img.volume(0);
             sound_5Img.volume(1);

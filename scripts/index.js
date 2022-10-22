@@ -11,7 +11,8 @@ IMAGE4_BOTTOM = 77.27,
 IMAGE5_TOP = 84.92,
 IMAGE5_BOTTOM = 100;
 
-let context,
+let autoscroll = 0,
+    context,
     soundFade = 0,
     volume = 0, 
     sound_1Img,
@@ -158,16 +159,16 @@ function setVolumes(scrollPercent, sound_1, sound_2, img_diff) {
 }
 
 function pageScroll() {
-    window.scrollBy(0,1);
-    scrolldelay = setTimeout(pageScroll,10);
+    autoscroll = autoscroll + 1;
+    console.log('scroll: ' + autoscroll);
+    $('#container-body').scrollTop(autoscroll);
+    scrolldelay = setTimeout(pageScroll,8);
 }
 
 function startExperience(mode) {
 
     console.log('START');
     context = new AudioContext();
-
-    
 
     context.resume().then(() => {
         sound_1Img = new Howl({

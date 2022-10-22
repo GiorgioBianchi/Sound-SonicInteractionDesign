@@ -28,9 +28,10 @@ $( document ).ready(function() {
         var s = $('#container-body').scrollTop();
         var h = $('#container-body').height();
         var d = $('#container-body').prop("scrollHeight");
-      
+        
         var scrollPercent = ((s+h)/d) * 100;
-
+        
+        if(scrollPercent> 18) $('.scrollbar-info').addClass('hide-text');
         console.log(scrollPercent);
 
         if(scrollPercent > IMAGE1_TOP && scrollPercent < IMAGE1_BOTTOM ){
@@ -170,6 +171,8 @@ function startExperience(mode) {
     console.log('START');
     context = new AudioContext();
 
+    if(mode) $('.scrollbar-info').hide();
+
     context.resume().then(() => {
         sound_1Img = new Howl({
             src: ['./assets/sounds/tracks/1.mp3?version=1'],
@@ -212,7 +215,6 @@ function startExperience(mode) {
         setTimeout(function () {
             $('.overlay-start').hide();
             if(mode) {
-                console.log('AUTOSCROLL');
                 pageScroll();
             }
         }, 2000);

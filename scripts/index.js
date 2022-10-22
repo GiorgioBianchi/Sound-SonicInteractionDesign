@@ -38,6 +38,11 @@ $( document ).ready(function() {
             $('#image2Text').addClass('withdraw-text');
             $('#image1Text').addClass('stretch-text');
             $('#image1Text').removeClass('withdraw-text');
+
+            $('#image2Description').removeClass('show-text');
+            $('#image2Description').addClass('hide-text');
+            $('#image1Description').addClass('show-text');
+            $('#image1Description').removeClass('hide-text');
         } else if(scrollPercent > IMAGE1_BOTTOM && scrollPercent < IMAGE2_TOP) {
             soundFade = scrollPercent - IMAGE1_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
@@ -47,6 +52,11 @@ $( document ).ready(function() {
             $('#image1Text').addClass('withdraw-text');
             $('#image2Text').addClass('stretch-text');
             $('#image2Text').removeClass('withdraw-text');
+
+            $('#image1Description').removeClass('show-text');
+            $('#image1Description').addClass('hide-text');
+            $('#image2Description').addClass('show-text');
+            $('#image2Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE2_TOP && scrollPercent < IMAGE2_BOTTOM) {
             if(sound_1Img.playing()) sound_1Img.volume(0);
             sound_2Img.volume(1);
@@ -55,6 +65,11 @@ $( document ).ready(function() {
             $('#image3Text').addClass('withdraw-text');
             $('#image2Text').addClass('stretch-text');
             $('#image2Text').removeClass('withdraw-text');
+
+            $('#image3Description').removeClass('show-text');
+            $('#image3Description').addClass('hide-text');
+            $('#image2Description').addClass('show-text');
+            $('#image2Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE2_BOTTOM && scrollPercent < IMAGE3_TOP) {
             soundFade = scrollPercent - IMAGE2_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
@@ -64,6 +79,11 @@ $( document ).ready(function() {
             $('#image2Text').addClass('withdraw-text');
             $('#image3Text').addClass('stretch-text');
             $('#image3Text').removeClass('withdraw-text');
+
+            $('#image2Description').removeClass('show-text');
+            $('#image2Description').addClass('hide-text');
+            $('#image3Description').addClass('show-text');
+            $('#image3Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE3_TOP && scrollPercent < IMAGE3_BOTTOM) {
             if(sound_2Img.playing()) sound_2Img.volume(0);
             sound_3Img.volume(1);
@@ -72,6 +92,11 @@ $( document ).ready(function() {
             $('#image4Text').addClass('withdraw-text');
             $('#image3Text').addClass('stretch-text');
             $('#image3Text').removeClass('withdraw-text');
+
+            $('#image4Description').removeClass('show-text');
+            $('#image4Description').addClass('hide-text');
+            $('#image3Description').addClass('show-text');
+            $('#image3Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE3_BOTTOM && scrollPercent < IMAGE4_TOP) {
             soundFade = scrollPercent - IMAGE3_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
@@ -81,6 +106,11 @@ $( document ).ready(function() {
             $('#image3Text').addClass('withdraw-text');
             $('#image4Text').addClass('stretch-text');
             $('#image4Text').removeClass('withdraw-text');
+
+            $('#image3Description').removeClass('show-text');
+            $('#image3Description').addClass('hide-text');
+            $('#image4Description').addClass('show-text');
+            $('#image4Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE4_TOP && scrollPercent < IMAGE4_BOTTOM) {
             if(sound_3Img.playing()) sound_3Img.volume(0);
             sound_4Img.volume(1);
@@ -89,6 +119,11 @@ $( document ).ready(function() {
             $('#image5Text').addClass('withdraw-text');
             $('#image4Text').addClass('stretch-text');
             $('#image4Text').removeClass('withdraw-text');
+
+            $('#image5Description').removeClass('show-text');
+            $('#image5Description').addClass('hide-text');
+            $('#image4Description').addClass('show-text');
+            $('#image4Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE4_BOTTOM && scrollPercent < IMAGE5_TOP) {
             soundFade = scrollPercent - IMAGE4_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
@@ -98,6 +133,11 @@ $( document ).ready(function() {
             $('#image4Text').addClass('withdraw-text');
             $('#image5Text').addClass('stretch-text');
             $('#image5Text').removeClass('withdraw-text');
+
+            $('#image4Description').removeClass('show-text');
+            $('#image4Description').addClass('hide-text');
+            $('#image5Description').addClass('show-text');
+            $('#image5Description').removeClass('hide-text');
         } else if( scrollPercent > IMAGE5_TOP && scrollPercent < IMAGE5_BOTTOM) {
             if(sound_4Img.playing()) sound_4Img.volume(0);
             sound_5Img.volume(1);

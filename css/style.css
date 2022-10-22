@@ -61,14 +61,21 @@ body {
 }
 
 .timeline-info {
-    width: 25%; 
+    width: 50%; 
     display: flex; 
-    left: 50%; 
+    left: 25%; 
     flex-direction:column; 
     position: absolute; 
     height: 100vh; 
     top:0; 
     justify-content:space-between;
+}
+
+.description {
+    text-align: center;
+    color: white;
+    left: 20%;
+    text-shadow: 5px 5px 5px black;
 }
 
 .dot {
@@ -119,4 +126,22 @@ body {
 @keyframes withdrawText {
     from {font-size: large; opacity: 1;}
     to {font-size: small; opacity: 0.6;}    
+}
+
+.show-text {
+    animation: showText 0.7s linear forwards;
+}
+
+@keyframes showText {
+    from {opacity: 0}
+    to {opacity: 1;}    
+}
+
+.hide-text {
+    animation: hideText 0.5s linear forwards;
+}
+
+@keyframes hideText {
+    from {opacity: 1;}
+    to {opacity: 0.0;}    
 }

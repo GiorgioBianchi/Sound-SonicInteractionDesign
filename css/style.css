@@ -1,47 +1,57 @@
+html { height: 100%; overflow:auto; }
 body {
     user-select: none;
+    height: 100%;
 }
-.image1 {
-    background-image: url("../assets/images/1_interieur_mit_der_uhr.jpg");
+.image1, .image2, .image3, .image4, .image5 {
     background-size: cover;
     background-repeat: no-repeat;
     width:100%;
-    height:fit-content;
+    height:100%;
+}
+
+.image1 {
+    background-image: url("../assets/images/1_interieur_mit_der_uhr.jpg");
  }
 
 .image2 {
     background-image: url("../assets/images/2_The_Lamb.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:100%;
-    height:100%;
  }
 
 .image3 {
     background-image: url("../assets/images/3_Fish_Magic.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:100%;
-    height:100%;
  }
 
 .image4 {
     background-image: url("../assets/images/4_Castle Garden.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:100%;
-    height:100%;
  }
 
 .image5 {
     background-image: url("../assets/images/5_Halme.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:100%;
+ }
+
+.overlay-actions {
+    z-index: 102;
+    position: absolute;
+ }
+
+.overlay-photo {
+    z-index: 101;
     height:100%;
+    width:100%;
+    right:0;
+    position:absolute;
+    border: none;
+    box-shadow: 0 0 10px #00ff00 inset;
+ }
+
+ .bg-photo {
+    margin-left: 64%;
+    border: none;
+    box-shadow: 0 0 10px #222222 inset;
  }
  
- .timeline {
+.timeline {
     border-left: 6px solid white;
     height: 100%;
     position: absolute;
@@ -72,6 +82,26 @@ body {
     margin-left: -15px;
 }
 
+#image1Text {
+    font-size: medium;
+}
+
+#image2Text {
+    font-size: medium;
+}
+
+#image3Text {
+    font-size: medium;
+}
+
+#image4Text {
+    font-size: medium;
+}
+
+#image5Text {
+    font-size: medium;
+}
+
 .year {
     color: white;
     left: 50%;
@@ -84,6 +114,7 @@ body {
     background-color: #222222;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .fade-out{ 
@@ -91,3 +122,21 @@ body {
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
  }
+
+.stretch-text {
+    animation: stretchText 1s linear forwards;
+}
+
+@keyframes stretchText {
+    from {font-size: medium;}
+    to {font-size: large;}    
+}
+
+.withdraw-text {
+    animation: withdrawText 1s linear forwards;
+}
+
+@keyframes withdrawText {
+    from {font-size: large;}
+    to {font-size: medium;}    
+}

@@ -34,38 +34,70 @@ $( document ).ready(function() {
 
         if(scrollPercent > IMAGE1_TOP && scrollPercent < IMAGE1_BOTTOM ){
             if(sound_2Img.playing()) sound_2Img.volume(0);
+            $('#image2Text').removeClass('stretch-text');
+            $('#image2Text').addClass('withdraw-text');
+            $('#image1Text').addClass('stretch-text');
+            $('#image1Text').removeClass('withdraw-text');
         } else if(scrollPercent > IMAGE1_BOTTOM && scrollPercent < IMAGE2_TOP) {
             soundFade = scrollPercent - IMAGE1_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
             sound_2Img.volume(volume);
             sound_1Img.volume(1 - volume);
+            $('#image1Text').removeClass('stretch-text');
+            $('#image1Text').addClass('withdraw-text');
+            $('#image2Text').addClass('stretch-text');
+            $('#image2Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE2_TOP && scrollPercent < IMAGE2_BOTTOM) {
             if(sound_1Img.playing()) sound_1Img.volume(0);
             sound_2Img.volume(1);
             if(sound_3Img.playing()) sound_3Img.volume(0);
+            $('#image3Text').removeClass('stretch-text');
+            $('#image3Text').addClass('withdraw-text');
+            $('#image2Text').addClass('stretch-text');
+            $('#image2Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE2_BOTTOM && scrollPercent < IMAGE3_TOP) {
             soundFade = scrollPercent - IMAGE2_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
             sound_3Img.volume(volume);
             sound_2Img.volume(1.0 - volume);
+            $('#image2Text').removeClass('stretch-text');
+            $('#image2Text').addClass('withdraw-text');
+            $('#image3Text').addClass('stretch-text');
+            $('#image3Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE3_TOP && scrollPercent < IMAGE3_BOTTOM) {
             if(sound_2Img.playing()) sound_2Img.volume(0);
             sound_3Img.volume(1);
             if(sound_4Img.playing()) sound_4Img.volume(0);
+            $('#image4Text').removeClass('stretch-text');
+            $('#image4Text').addClass('withdraw-text');
+            $('#image3Text').addClass('stretch-text');
+            $('#image3Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE3_BOTTOM && scrollPercent < IMAGE4_TOP) {
             soundFade = scrollPercent - IMAGE3_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
             sound_4Img.volume(volume);
             sound_3Img.volume(1 - volume);
+            $('#image3Text').removeClass('stretch-text');
+            $('#image3Text').addClass('withdraw-text');
+            $('#image4Text').addClass('stretch-text');
+            $('#image4Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE4_TOP && scrollPercent < IMAGE4_BOTTOM) {
             if(sound_3Img.playing()) sound_3Img.volume(0);
             sound_4Img.volume(1);
             if(sound_5Img.playing()) sound_5Img.volume(0);
+            $('#image5Text').removeClass('stretch-text');
+            $('#image5Text').addClass('withdraw-text');
+            $('#image4Text').addClass('stretch-text');
+            $('#image4Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE4_BOTTOM && scrollPercent < IMAGE5_TOP) {
             soundFade = scrollPercent - IMAGE4_BOTTOM;
             volume = (soundFade/IMAGE_DIFF);
             sound_5Img.volume(volume);
             sound_4Img.volume(1 - volume);
+            $('#image4Text').removeClass('stretch-text');
+            $('#image4Text').addClass('withdraw-text');
+            $('#image5Text').addClass('stretch-text');
+            $('#image5Text').removeClass('withdraw-text');
         } else if( scrollPercent > IMAGE5_TOP && scrollPercent < IMAGE5_BOTTOM) {
             if(sound_4Img.playing()) sound_4Img.volume(0);
             sound_5Img.volume(1);
@@ -95,9 +127,7 @@ function startExperience(mode) {
     console.log('START');
     context = new AudioContext();
 
-    if(mode) {
-        pageScroll();
-    }
+    
 
     context.resume().then(() => {
         sound_1Img = new Howl({
@@ -136,7 +166,14 @@ function startExperience(mode) {
         sound_4Img.play();
         sound_5Img.volume(0);
         sound_5Img.play();
-        $('.overlay-start').addClass('fadeOut');
-        setTimeout($('.overlay-start').hide(), 2000);
+
+        $('.overlay-start').addClass('fade-out');
+        setTimeout(function () {
+            $('.overlay-start').hide();
+            if(mode) {
+                console.log('AUTOSCROLL');
+                pageScroll();
+            }
+        }, 2000);
     });
 }

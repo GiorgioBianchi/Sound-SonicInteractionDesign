@@ -85,12 +85,20 @@ function setVolumes(scrollPercent, sound_1, sound_2, img_diff) {
     sound_1.volume(1 - volume);
 }
 
-function startExperience() {
+function pageScroll() {
+    window.scrollBy(0,1);
+    scrolldelay = setTimeout(pageScroll,10);
+}
+
+function startExperience(mode) {
 
     console.log('START');
     context = new AudioContext();
 
-    
+    if(mode) {
+        pageScroll();
+    }
+
     context.resume().then(() => {
         sound_1Img = new Howl({
             src: ['./assets/sounds/tracks/1.mp3'],

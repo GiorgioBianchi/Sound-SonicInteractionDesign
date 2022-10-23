@@ -69,9 +69,9 @@ body {
 }
 
 .timeline-info {
-    width: 98%; 
+    width: 80%; 
     display: flex; 
-    left:1%;
+    left:10%;
     flex-direction:column; 
     position: fixed; 
     height: 100vh; 
@@ -86,7 +86,7 @@ body {
 }
 
 .description {
-    text-align: right;
+    text-align: justify;
     color: white;
     left: 20%;
     text-shadow: 5px 5px 5px black;
